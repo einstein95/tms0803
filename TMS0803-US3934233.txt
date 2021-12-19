@@ -1,0 +1,330 @@
+                                    PROGRAM LISTING
+
+ROM     Instruction     Statement       Descriptive     Mnemonic    Mask    Narrative
+Add.        Code            No.
+------------------------------------------------------------------------------------------------------------------
+000     10 11000 1111      0097         CLEAR           ZFA         ALL     POWER ON
+001     10 10111 1111      0098                         ZFB         ALL
+002     11 10000 1111      0099                         AKA         ALL
+003     11 10010 1111      0100                         AKC         ALL
+004     00 00000 0101      0101                         BET         RJ      RESET CONDITION LATCH
+005     11 01101 1011      0102         RJ              CAK         MANT1
+006     01 00001 0011      0103                         BILT        ZERO
+007     10 11010 0110      0104         S               TFA         SIGN
+008     00 00000 1100      0105                         BIZ         RJ1
+009     11 11100 1000      0106                         SAKAH       OV1     MINUS SIGN IS HEX 14
+00A     11 11100 1000      0107                         SAKAH       OV1
+00B     00 00000 1100      0108                         BET         RJ1     RESET CONDITION LATCH
+00C     11 01101 0010      0109         RJ1             CAK         LSD1    RIGHT JUSTIFY THE DISPLAY
+00D     00 00001 0101      0110                         BIGE        DPTPOS
+00E     11 01101 1101      0111                         CAK         EXP1
+00F     01 00001 0101      0112                         BILT        DPTPOS
+010     11 10111 1100      0113                         SRLA        MANT
+011     11 01001 1101      0114                         SAKA        EXP1
+012     00 00000 1100      0115                         BET         RJ1     ALWAYS BRANCH
+013     11 10000 1111      0116         ZERO            AKA         ALL
+014     10 11000 0110      0117                         ZFA         SIGN
+015     11 10011 1111      0118         DPTPOS          EXAB        ALL
+016     11 10000 1011      0119                         AKA         MANT1
+017     11 00001 1011      0120                         AAKA        MANT1
+018     11 10011 1100      0121                         EXAB        MANT
+019     11 00011 1110      0122                         ABOA        EXP
+01A     11 01001 1101      0123         DP1             SAKA        EXP1
+01B     01 00001 1110      0124                         BILT        DP2
+01C     11 10101 1100      0125                         SLLB        MANT
+01D     00 00001 1010      0126                         BET         DP1     ALWAYS BRANCH
+01E     11 00011 1110      0127         DP2             ABOA        EXP
+01F     10 11001 1000      0128                         TFB         F10
+020     01 00010 1001      0129                         BIO         ID1
+021     10 10101 0000      0130         LOCK            SYNC
+022     10 10110 0000      0131                         SCAN
+023     01 00010 0001      0132                         BID         LOCK
+024     10 10101 0000      0133                         SYNC
+025     10 10110 0000      0134                         SCAN
+026     01 00010 0001      0135                         BID         LOCK
+027     11 00110 1110      0136                         ACKB        EXP
+028     11 10010 1110      0138         IDLE            AKC         EXP
+029     10 10111 1000      0139         ID1             ZFB         F10
+02A     10 10010 0111      0140         1D2             WAITNO      ID3
+02B     10 10101 0000      0141         ID4             SYNC
+02C     10 10110 0000      0142                         SCAN
+02D     01 00110 1000      0143                         BID         KEY
+02E     11 11101 1101      0144         FD1             ACKA        EXP1
+02F     11 01111 0001      0145                         CCK         TIM4
+030     01 00011 0100      0146                         BILT        FD3
+031     11 10010 1110      0147                         AKC         EXP
+032     10 10101 0000      0148                         SYNC
+033     10 10001 0001      0149                         WAITDK      ID5
+034     10 11001 0101      0150         FD3             TFB         F5      OVERFLOW FLAG
+035     00 00010 1010      0151                         BIZ         ID2
+036     10 10011 1000      0152                         SFB         F10
+037     11 10010 1100      0153                         AKC         MANT
+038     11 01011 1011      0154                         SCKC        MANT1
+039     00 00011 1010      0155                         BET         FD5
+03A     11 00110 1100      0156         FD5             ACKB        MANT
+03B     11 11101 1101      0157                         ACKC        EXP1
+03C     10 10010 1000      0158                         WAITNO      FD4
+03D     10 10011 0001      0159         MINKEY          SFB         OP2
+03E     10 11010 0011      0160                         TFA         F3
+03F     00 00100 1101      0161                         BIZ         PLSKEY
+040     10 11010 0100      0162                         TFA         F4
+041     01 00100 1101      0163                         BIO         PLSKEY
+042     10 11010 0000      0164                         TFA         OP1
+043     00 00100 1101      0166                         ZFB         OP2     MINUS KEY AS SIGN AFTER MULT OR DIVIDE
+045     10 10100 0110      0167                         SFA         SIGN
+046     11 10000 1111      0168                         AKA         ALL
+047     10 10100 0111      0169                         SFA         F9
+048     11 00001 0000      0170                         AAKA        DPT7
+049     10 11000 0011      0171                         ZFA         F3
+04A     00 00000 0111      0172                         BET         S       ALWAYS BRANCH
+04B     10 10011 0001      0173         DIVKEY          SFB         OP2
+04C     10 10011 0000      0174         MLTKEY          SFB         OP1
+04D     10 10011 0010      0175         PLSKEY          SFB         OP3
+04E     10 11010 0011      0176                         TFA         F3      CLEAR DISPLAY FLAG
+04F     01 00101 0010      0177                         BIO         KS1
+050     10 11010 0100      0178                         TFA         F4      EQUAL FLAG
+051     00 00101 0110      0179                         BIZ         KS2
+052     10 11000 0100      0180         KS1             ZFA         F4
+053     10 10100 0101      0181                         SFA         F5
+054     00 00101 0110      0182                         BET         KS2     ALWAYS BRANCH
+055     10 10100 0100      0184         EQLKEY          SFA         F4
+056     11 01101 1011      0185         KS2             CAK         MANTI
+057     01 01001 1110      0186                         BILT        KS6
+058     11 01101 1000      0187         KS3             CAK         OV1     LEFT JUSTIFY
+059     00 10010 1011      0188                         BIGE        KS4
+05A     11 10100 1100      0189                         SLLA        MANT
+058     11 00001 1101      0190                         AAKA        EXP1
+05C     00 00101 1000      0191                         BET         KS3     ALWAYS BRANCH
+05D     10 10100 1000      0192         DPTKEY          SFA         F10
+05E     10 11000 0111      0193                         ZFA         F9
+05F     10 11010 0011      0194                         TFA         F3
+060     00 00001 0101      0195                         BIZ         DPTPOS
+061     10 11000 0011      0196                         ZFA         F3
+062     00 00001 0011      0197                         BET         ZERO    ALWAYS BRANCH
+063     10 11010 0011      0198         CEKEY           TFA         F3
+064     01 00001 0101      0199                         BIO         DPTPOS
+065     10 10100 0011      0200                         SFA         F3
+066     10 11000 1000      0201                         ZFA         F10
+067     00 00001 0011      0202                         BET         ZERO    ALWAYS BRANCH
+068     11 00100 1110      0203         KEY             ABOC        EXP
+069     10 11001 0101      0204                         TFB         F5
+06A     01 00010 0001      0205                         BIO         LOCK
+06B     10 10101 0000      0206                         SYNC
+06C     10 10101 0000      0207                         SYNC
+06D     10 10110 0000      0208                         SCAN
+06E     00 00010 1000      0209                         BIU         IDLE
+06F     11 10001 1111      0210                         AKB         ALL
+070     10 10101 0000      0211                         SYNC
+071     10 00000 0000      0212                         BKO         CLEAR
+072     10 00101 0101      0213                         BKO         EQLKEY
+073     10 00100 1101      0214                         BKO         PLSKEY
+074     10 00011 1101      0215                         BKO         MINLEY  MINKEY
+075     10 00100 1100      0216                         BKO         MLTKEY
+076     10 00100 1011      0217                         BKO         DIVKEY
+077     10 00110 0011      0218                         BKO         CEKEY
+078     10 00101 1101      0219                         BKO         DPTKEY
+079     10 00111 1110      0220                         BKO         ZERKEY
+
+                           0222         * ______________________DIGIT ENTRY   _______________
+07A     11 10011 1111      0223                         EXAB        ALL
+07B     11 11010 0010      0224                         AKCM        LSD1    SCAN N
+07C     11 10011 1111      0225                         EXAB        ALL
+07D     01 00001 0101      0226                         BIC         DPTPOS 
+07E     10 11010 0011      0227         ZERKEY          TFA         F3      CLEAR DISPLAY FLAG
+07F     00 01000 0011      0228                         BIZ         NUM1 
+080     10 11000 0110      0229         CD              ZFA         SIGN
+081     11 10000 1111      0230         CD1             AKA         ALL
+082     10 11000 0011      0231                         ZFA         F3
+083     10 110101 0110     0232         NUM1            TFA         SIGN
+084     00 01001 0100      0233                         BIZ         NUM3
+085     11 11011 1000      0234                         AAKAH       OV1
+086     11 11011 1000      0235                         AAKAH       OV1
+087     11 11100 1000      0236                         SAKAH       OV1
+088     11 11100 1000      0237                         SAKAH       OV1
+089     01 00001 0101      0238                         BIC         DPTPOS
+08A     10 11010 0111      0239         NUM2            TFA         F9
+08B     00 01001 1000      0240                         BIZ         NUM4
+08C     10 11010 1000      0241                         TFA         F10
+08D     01 01001 0010      0242                         BIO         NUM7
+08E     11 10011 1111      0243                         EXAB        ALL
+08F     11 01101 1011      0244                         CAK         MANTI
+090     11 10011 1111      0245                         EXAB        ALL
+091     01 00001 0101      0246                         BILT        DPTPOS
+092     10 11000 0111      0247         NUM7            ZFA         F9
+093     00 01001 1100      0248                         BET         NUM6    ALWAYS BRANCH
+094     11 01101 1010      0249         NUM3            CAK         MSD1
+095     00 00001 0101      0250                         BIGE        DPTPOS
+096     11 01101 0000      0251                         CAK         DPT7
+097     00 00001 0101      0252                         BIGE        DPTPOS
+098     10 11010 1000      0253         NUM4            TEA         F10
+099     00 01001 1011      0254                         BIZ         NUM5
+09A     11 00001 1101      0255                         AAKA        EXP1
+09B     11 10100 1100      0256         NUM5            SLLA        MANT
+09C     11 00011 0010      0257         NUM6            ABOA        LSD1
+09D     00 00001 0101      0258                         BET         DPTPOS  ALWAYS BRANCH
+09E     11 10000 1110      0259         KS6             AKA         EXP
+09F     10 11000 0110      0260                         ZFA         SIGN
+0A0     11 00001 0000      0261                         AAKA        DPT7
+0A1     10 11000 1010      0262         KS7             ZFA         FD      ZEROS TEMP(NUM) AND DPT FLAG
+0A2     10 11010 0101      0263                         TFA         F5      POST FLAG
+0A3     01 01111 1101      0264         BIO             POST
+0A4     10 11010 0010      0265                         TFA         OP3
+0A5     00 01111 1101      0266                         BIZ         POST
+0A6     11 00110 1111      0267                         ACKB        ALL
+0A7     10 11001 0011      0268                         TFB         F3      CONSTANT FLAG
+0A8     00 01010 1101      0269                         BIZ         KS8
+0A9     10 10111 0011      0270                         ZFB         F3
+0AA     11 10011 1111      0271                         EXAB        ALL
+0AB     11 00100 1111      0272                         ABOC        ALL
+0AC     10 11111 0110      0273                         EXF         SIGN
+0AD     10 11010 0000      0274         KS8             TFA         OP1
+0AE     01 01100 1111      0275                         BIO         M/D
+
+                           0277         * ______________________ADD SUBTRACT ROUTINE_________
+0AF     10 11001 0110      0278         A/S             TFB         SIGN
+0B0     00 01011 0010      0279                         BIZ         AS1
+0B1     10 10100 0101      0280                         SFA         F5
+0B2     10 11010 0001      0281         AS1             TFA         OP2
+0B3     00 01011 0101      0282                         BIZ         AS2
+0B4     10 11011 0110      0283                         FFB         SIGN
+0B5     11 01100 1110      0284         AS2             CAB         EXP
+0B6     00 01011 1001      0285                         BIGE        AS3
+0B7     11 10011 1111      0286                         EXAB        ALL
+0B8     10 11111 0110      0287                         EXF         SIGN
+0B9     11 01001 1101      0288         AS3             SAKA        EXP1
+0BA     11 01100 1110      0289                         CAB         EXP
+0BB     01 01011 1110      0290                         BILT        AS4
+0BC     11 10111 1100      0291                         SRLA        MANT
+0BD     00 01011 1001      0292                         BET         AS3     ALWAYS BRANCH
+0BE     11 00001 1101      0293         AS4             AAKA        EXP1
+0BF     00 01100 0000      0294                         BET         AS5     RESET CONDITION
+0C0     11 01100 1100      0295         AS5             CAB         MANT
+0C1     00 01100 0100      0296                         BIGE        AS6
+0C2     11 10011 1111      0297                         EXAB        ALL
+0C3     10 11111 0110      0298                         EXF         SIGN
+0C4     10 11101 0110      0299         AS6             CF          SIGN
+0C5     00 01100 1000      0300                         BIE         AS7
+0C6     11 00111 1100      0301                         SABA        MANT
+0C7     00 01100 1001      0302                         BET         AS8     ALWAYS BRANCH
+0C8     11 00000 1100      0303         AS7             AABA        MANT
+0C9     10 10111 0110      0304         AS8             ZFB         SIGN
+0CA     10 11010 0101      0305                         TFA         F5
+0CB     00 01111 1101      0306                         BIZ         POST
+0CC     10 10011 0110      0307                         SFB         SIGN
+0CD     10 11000 0101      0308                         ZFA         F5
+0CE     00 01111 1101      0309                         BET         POST    ALWAYS BRANCH
+0CF     10 11101 0110      0311         M/D             CF          SIGN
+0D0     10 11000 0110      0312                         ZFA         SIGN
+0D1     00 01101 0011      0313                         BIE         MD1
+0D2     10 10100 0110      0314                         SFA         SIGN
+0D3     10 11010 0001      0315         MD1             TFA         OP2
+0D4     01 01110 0100      0316                         BIO         DIV
+                           0317         * ______________________MULTIPLY      _______________
+0D5     11 00010 1111      0318                         AAKC        ALL
+0D6     11 10000 1100      0319                         AKA         MANT
+0D7     11 00000 1110      0320                         AABA        EXP
+0D8     11 01011 0010      0321         M1              SCKC        LSDI
+0D9     01 01101 1100      0322                         BILT        M2
+0DA     11 00000 1100      0323                         AABA        MANT
+0DB     00 01101 1000      0324                         BET         M1      ALWAYS BRANCH
+0DC     11 11001 1100      0325         M2              SRLC        MANT
+0DD     11 01111 1011      0326                         CCK         MANT1
+0DE     01 01111 1100      0327                         BILT        MD2     MULTIPLY DONE
+0DF     11 10111 1100      0328                         SRLA        MANT
+0E0     11 01001 1101      0329                         SAKA        EXP1
+0E1     00 01101 1000      0330                         BIGE        M1
+0E2     10 10011 0101      0331                         SFB         F5
+0E3     00 01101 1000      0332                         BET         M1      ALWAYS BRANCH
+                           0333         * ______________________DIVIDE        _______________
+0E4     11 01111 1011      0334         DIV             CCK         MANT1
+0E5     01 01111 1010      0335                         BILT        ERR     DIVIDE BY ZERO
+0E6     11 00010 1111      0336                         AAKC        ALL
+0E7     11 10000 1100      0337         D1              AKA         MANT
+0E8     11 01111 1011      0338                         CCK         MANT1
+0E9     01 01111 1100      0339                         BILT        MD2     ANSWER ZERO
+0EA     11 00111 1110      0340                         SABA        EXP
+0EB     00 01110 1101      0341                         BIGE        D2
+0EC     10 10011 0101      0342                         SFB         F5
+0ED     11 01110 1100      0343         D2              CCB         MANT
+0EE     01 01111 0010      0344                         BILT        D3
+0EF     11 01010 1100      0345                         SCBC        MANT
+0F0     11 00001 0010      0346                         AAKA        LSD1
+0F1     00 01110 1101      0347                         BET         D2      ALWAYS BRANCH
+0F2     11 01101 1010      0348         D3              CAK         MSD1
+0F3     00 01111 1100      0349                         BIGE        MD2     DIVIDE DONE
+0F4     11 10110 1100      0350                         SLLC        MANT
+0F5     11 10100 1100      0351                         SLLA        MANT
+0F6     11 00001 1101      0352                         AAKA        EXPI
+0F7     00 01110 1101      0353                         BINC        D2
+0F8     10 10111 0101      0354                         ZFB         F5
+0F9     00 01110 1101      0355                         BET         D2      ALWAYS BRANCH
+0FA     10 10011 0101      0356         ERR             SFB         F5
+0FB     00 00001 0011      0357                         BET         ZERO    ALWAYS BRANCH
+0FC     11 00100 1111      0358         MD2             ABOC        ALL
+
+                           0360         * ______________________POST NORM     _______________
+0FD     11 10001 1110      0361         POST            AKB         EXP
+0FE     11 10001 0000      0362                         AKB         DPT7
+0FF     11 01101 1000      0363                         CAK         OV1
+100     01 10000 1000      0364                         BILT        P1
+101     11 10111 1100      0365                         SRLA        MANT
+102     11 01001 1101      0366                         SAKA        EXP1
+103     00 01001 1101      0367                         BIGE        P1
+104     10 10011 0101      0368                         SFB         F5
+105     11 00000 1110      0369         OVF             AABA        EXP
+106     11 00001 1101      0370                         AAKA        EXP1
+107     01 10011 1001      0371                         BIC         OVF1    ALWAYS BRANCH
+108     10 11001 0101      0372         P1              TFB         FS
+109     01 10000 0101      0373                         BIO         OVF
+10A     11 01101 1011      0374                         CAK         MANTI
+10B     01 10001 0010      0375                         BILT        P3
+10C     11 01101 1010      0376         P2              CAK         MSD1
+10D     00 10001 0100      0377                         BIGE        P4
+10E     11 10100 1100      0378                         SLLA        MANT
+10F     11 00001 1101      0379                         AAKA        EXP1
+110     00 10000 1100      0380                         BET         P2      ALWAYS BRANCH
+111     00 00010 1011      0382         ID5             BET         ID4     ALWAYS BRANCH
+112     11 00011 1110      0382         P3              ABOA        EXP
+113     10 11000 0110      0383                         ZFA         SIGN
+114     10 11001 0010      0384         P4              TFB         OP3
+115     00 10001 1101      0365                         BIZ         P7
+116     10 10011 0011      0386                         SFB         F3
+117     11 00010 1111      0387         P5              AAKC        ALL
+118     10 11101 0110      0388                         CF          SIGN
+119     00 10001 1011      0389                         BIE         P6
+11A     10 11011 0110      0390                         FFB         SIGN
+11B     10 11111 1001      0391         P6              EXF         OPFGS
+11C     10 10111 1001      0392                         ZFB         OPFGS
+11D     10 10100 0011      0393         P7              SFA         F3
+11E     10 11000 0101      0394                         ZFA         F5
+11F     11 01100 1110      0395                         CAB         EXP
+120     01 00000 0101      0396                         BILT        RJ
+121     11 00111 1100      0397                         SABA        EXP
+122     11 01101 1101      0398         P8              CAK         EXP1
+123     01 10010 1001      0399                         BILT        P9
+124     11 01001 1101      0400                         SAKA        EXP1
+125     11 10111 1100      0401                         SRLA        MANT
+126     00 10010 0010      0402                         BET         P8      ALWAYS BRANCH
+127     00 00010 1011      0403         ID3             BET         ID3     ALWAYS BRANCH
+128     00 00001 0101      0404         FD4             BET         DPTPOS  ALWAYS BRANCH
+129     11 00001 0000      0406         P9              AAKA        DPT7
+12A     00 00000 0101      0407                         BET         RJ      ALWAYS BRANCH
+12B     10 11010 0110      0408         KS4             TFA         SIGN
+12C     00 10011 0110      0409                         BiZ         KS9
+12D     11 10000 1000      0410                         AKA         OV1     ELIMINATE HEX CHAR FOR SIGN
+12E     11 01001 1000      0411                         SAKA        OV1
+12F     11 01101 1011      0412                         CAK         MANT1
+130     01 01001 1110      0413                         BILT        KS6
+131     11 01101 1010      0414         KS5             CAK         MSD1
+132     00 01010 0001      0415                         BIGE        KS7
+133     11 10100 1100      0416                         SLLA        MANT
+134     11 00001 1101      0417                         AAKA        EXP1
+135     00 10011 0001      0418                         BET         KS5     ALWAYS BRANCH
+136     11 10111 1100      0419         SK9             SRLA        MANT
+137     11 01001 1101      0420                         SAKA        EXP1
+138     00 01010 0001      0421                         BET         KS7     ALWAYS BRANCH
+139     10 11010 0110      0422         OVF1            TFA         SIGN
+13A     00 00001 0101      0433                         BIZ         DPTPOS
+13B     11 11100 1000      0424                         SAKAH       OV1
+13C     11 11100 1000      0425                         SAKAH       OV1
+13D     01 00001 0101      0426                         BILT        DPTPOS  ALWAYS BRANCH
